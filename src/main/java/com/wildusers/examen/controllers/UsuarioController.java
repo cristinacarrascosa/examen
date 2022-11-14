@@ -58,5 +58,7 @@ public class UsuarioController {
             @RequestParam(value = "nombre", required = false) String nombre) {
         return new ResponseEntity<Page<UsuarioEntity>>(oUsuarioService.getPage(page, size, nombre), HttpStatus.OK);
     }
+
+    
     
 }

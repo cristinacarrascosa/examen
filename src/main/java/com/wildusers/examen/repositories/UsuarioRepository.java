@@ -13,6 +13,8 @@ public interface UsuarioRepository extends JpaRepository<UsuarioEntity, Long> {
     /*Page<UsuarioEntity> findByNombreIgnoreCaseContaining(String nombre, Pageable oPageable);*/
     Page<UsuarioEntity> findByNombreIgnoreCaseContainingOrApellidosIgnoreCaseContaining(String nombre, String apellidos, Pageable oPageable);
 
+    UsuarioEntity findByLoginAndPassword(String login, String password);
+
    
 
   

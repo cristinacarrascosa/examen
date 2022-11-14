@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.wildusers.examen.Response.Response;
+import com.wildusers.examen.Response.ResponseUser;
 import com.wildusers.examen.entities.UsuarioEntity;
 import com.wildusers.examen.services.UsuarioService;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -59,6 +61,19 @@ public class UsuarioController {
         return new ResponseEntity<Page<UsuarioEntity>>(oUsuarioService.getPage(page, size, nombre), HttpStatus.OK);
     }
 
+    @GetMapping("")
+    public ResponseEntity<Response> prelogin() {
+        return new ResponseEntity<Response>(oUsuarioService.prelogin(), HttpStatus.OK);
+    }
+
+  /*  @PostMapping("/loginc")
+    public ResponseEntity<UsuarioEntity> loginc(@org.springframework.web.bind.annotation.RequestBody ResponseUser oResponseUser) {
+        return new ResponseEntity<UsuarioEntity>(UsuarioService.loginc(oResponseUser), HttpStatus.OK);
     
+      /*  @PostMapping("/loginc")
+        public ResponseEntity<UsuarioEntity> loginc(@org.springframework.web.bind.annotation.RequestBody CaptchaBean oCaptchaBean) {
+            return new ResponseEntity<UsuarioEntity>(oAuthService.loginc(oCaptchaBean), HttpStatus.OK);
+        } */
+
     
 }

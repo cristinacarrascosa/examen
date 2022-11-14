@@ -22,7 +22,7 @@ public class PendentEntity {
 
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name = "id_question")
-    private RolEntity question;
+    private QuestionEntity question;
 
     
     public PendentEntity() {
@@ -50,12 +50,12 @@ public class PendentEntity {
     }
 
 
-    public RolEntity getQuestion() {
+    public QuestionEntity getQuestion() {
         return question;
     }
 
 
-    public void setQuestion(RolEntity question) {
+    public void setQuestion(QuestionEntity question) {
         this.question = question;
     }
     
